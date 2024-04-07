@@ -9,11 +9,15 @@ const createGrid = (amtOfGrids) => {
     row.classList.add('grid-row');
 
     for (let j = 0; j < amtOfGrids; j++) {
+      const widthAndHeight = 960 / 24
       const gridBox = document.createElement('div');
       gridBox.classList.add('grid-box');
+      gridBox.style.width = `${widthAndHeight}px`;
+      gridBox.style.height = `${widthAndHeight}px`;
       row.appendChild(gridBox)
 
-      gridBox.addEventListener('mouseenter', () => {
+      // adding mousehover listener to change background color
+      gridBox.addEventListener('mouseover', () => {
         gridBox.style.backgroundColor = 'black';
       })
 
@@ -23,7 +27,9 @@ const createGrid = (amtOfGrids) => {
   }
 }
 
-createGrid(5)
+createGrid(24)
+
+const allDivs = document
 
 
 
