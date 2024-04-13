@@ -5,6 +5,10 @@ const darkMod = document.querySelector('#darkMod');
 const eraser = document.querySelector('#eraser');
 const screen = document.querySelector('.screen');
 
+const deleteBorder = document.querySelector('#deleteBorder');
+
+
+
 // sizeOfGrid = 16;
 
 function randomInteger(max) {
@@ -56,6 +60,11 @@ const createGrid = (amtOfGrids) => {
           gridBox.style.backgroundColor = "";
         })
       })
+
+      deleteBorder.addEventListener('click', () => {
+        gridBox.style.border = "0px solid white";
+      })
+
 
     }
 
