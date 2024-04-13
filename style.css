@@ -14,8 +14,11 @@ body {
 }
 
 .reset-page {
+  display: flex;
+  flex-flow: column;
   padding: 10px;
   margin: 10px;
+  gap: 10px;
   border: 1px solid crimson;
   box-shadow: 2rem black;
 }

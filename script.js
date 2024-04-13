@@ -1,7 +1,26 @@
 const container = document.querySelector(".container");
-const resetButton = document.querySelector("button");
+const resetButton = document.querySelector(".reset");
+const rainbowMod = document.querySelector("#rainbowMod");
+const darkMod = document.querySelector('#darkMod');
+const eraser = document.querySelector('#eraser');
+const screen = document.querySelector('.screen');
 
 // sizeOfGrid = 16;
+
+function randomInteger(max) {
+  return Math.floor(Math.random() * (max + 1));
+}
+
+console.log(randomInteger(255));
+
+function randomRgbColor() {
+  let r = randomInteger(255);
+  let g = randomInteger(255);
+  let b = randomInteger(255);
+  return "rgb(" + r + "," + g + "," + b + ")";
+}
+
+console.log(randomRgbColor());
 
 const createGrid = (amtOfGrids) => {
   const wrapper = document.createElement('div');
@@ -20,8 +39,22 @@ const createGrid = (amtOfGrids) => {
       row.appendChild(gridBox)
 
       // adding mousehover listener to change background color
-      gridBox.addEventListener('mouseover', () => {
-        gridBox.style.backgroundColor = 'black';
+      darkMod.addEventListener('click', () => {
+        gridBox.addEventListener('mouseover', () => {
+          gridBox.style.backgroundColor = 'black';
+        })
+      })
+
+      rainbowMod.addEventListener('click', () => {
+        gridBox.addEventListener('mouseover', () => {
+          gridBox.style.backgroundColor = randomRgbColor();
+        })
+      })
+
+      eraser.addEventListener('click', () => {
+        gridBox.addEventListener('mouseover', () => {
+          gridBox.style.backgroundColor = "";
+        })
       })
 
     }
@@ -30,6 +63,9 @@ const createGrid = (amtOfGrids) => {
   }
   container.appendChild(wrapper);
 }
+
+
+
 
 resetButton.addEventListener('click', () => {
   let userSize = Number(prompt('What dimensions do you want for the new grid?'))
@@ -42,11 +78,15 @@ resetButton.addEventListener('click', () => {
 
   if (!wrapper) {
     createGrid(userSize)
+    screen.style.border = "2px solid red";
   } else {
     wrapper.remove()
     createGrid(userSize)
+    screen.style.border = "2px solid red";
   }
 })
+
+
 
 
 
