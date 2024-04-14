@@ -65,7 +65,7 @@ const createGrid = (amtOfGrids) => {
     row.classList.add('grid-row');
 
     for (let j = 0; j < amtOfGrids; j++) {
-      const widthAndHeight = 480 / amtOfGrids
+      const widthAndHeight = 500 / amtOfGrids
       const gridBox = document.createElement('div');
       gridBox.classList.add('grid-box');
       gridBox.style.width = `${widthAndHeight}px`;
