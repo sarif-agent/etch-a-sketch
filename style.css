@@ -14,16 +14,36 @@ body {
   background-color: #C0D6E8;
 }
 
+.title {
+  padding: 5px;
+}
+
 h1 {
   font-family: "Kode Mono", monospace;
   font-optical-sizing: auto;
+  font-weight: 650;
+  font-style: normal;
+  font-size: 42px;
+  color: rgb(0, 0, 0);
+  text-shadow: 2px 2px 2px rgb(173, 173, 173),
+    0px -4px 10px rgba(0, 0, 0, 0.877);
+}
+
+h4 {
+  text-align: center;
+  margin-top: 2px;
 }
 
 
 .screen {
   display: flex;
-  padding: 10px;
-  background-color: #FBF8DD;
+  padding: 5px;
+  background-color: rgb(42, 0, 90);
+  border: 3px solid black;
+  border-radius: 1rem;
+  box-shadow: 2px 2px 2px rgb(173, 173, 173),
+    0px -4px 10px rgba(0, 0, 0, 0.877);
+  ;
 }
 
 .reset-page {
@@ -38,16 +58,26 @@ h1 {
   display: flex;
   flex-flow: column;
   justify-content: center;
+  align-items: center;
   padding: 10px;
-  gap: 5px;
+  gap: 8px;
 }
 
 button {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  width: 150px;
+  cursor: pointer;
+}
+
+button:hover {
+  color: white;
+  animation: pulse 450ms ease-in-out;
+  border-color: rgb(255, 255, 255);
+  background-color: black;
 }
 
 .container {
-  width: 500px;
+  width: 480px;
   display: flex;
   flex-flow: column;
 }
