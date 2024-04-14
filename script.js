@@ -21,8 +21,9 @@ function randomRgbColor() {
   let r = randomInteger(255);
   let g = randomInteger(255);
   let b = randomInteger(255);
-  return "rgb(" + r + "," + g + "," + b + ")";
+  return `rgb(${r},${g},${b})`;
 }
+
 
 console.log(randomRgbColor());
 
@@ -35,7 +36,7 @@ const createGrid = (amtOfGrids) => {
     row.classList.add('grid-row');
 
     for (let j = 0; j < amtOfGrids; j++) {
-      const widthAndHeight = 960 / amtOfGrids
+      const widthAndHeight = 500 / amtOfGrids
       const gridBox = document.createElement('div');
       gridBox.classList.add('grid-box');
       gridBox.style.width = `${widthAndHeight}px`;
@@ -62,7 +63,7 @@ const createGrid = (amtOfGrids) => {
       })
 
       deleteBorder.addEventListener('click', () => {
-        gridBox.style.border = "0px solid white";
+        gridBox.classList.toggle("noborder");
       })
 
 
