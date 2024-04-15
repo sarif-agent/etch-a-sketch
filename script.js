@@ -55,6 +55,8 @@ blueSlider.addEventListener("input", updateColor);
 // İlk açılışta renk güncelleme
 updateColor();
 
+
+
 // creating grids using Flexbox. row and column.
 const createGrid = (amtOfGrids) => {
   const wrapper = document.createElement('div');
