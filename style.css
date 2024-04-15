@@ -76,7 +76,7 @@ button:hover {
 }
 
 .container {
-  width: 480px;
+  width: 500px;
   display: flex;
   flex-flow: column;
 }
