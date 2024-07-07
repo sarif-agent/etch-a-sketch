@@ -1,80 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Etch A Sketch</title>
-  <link rel="stylesheet" href="./style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap" rel="stylesheet">
-  <style>
-    .color-picker {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      font-family: Arial, sans-serif;
-    }
-
-    .color-box {
-      width: 200px;
-      height: 200px;
-      margin-bottom: 10px;
-      border: 2px solid rgb(255, 255, 255);
-      border-radius: 2rem;
-      margin-top: 5px;
-
-    }
-
-    .slider {
-      width: 150px;
-      margin-bottom: 10px;
-    }
-  </style>
-</head>
-
 <body>
-  <div class="title">
-    <h1>Etch a Sketch</h1>
-  </div>
+  <canvas id="canvas"></canvas>
 
-  <div class="reset-page">
-    <button class="reset">Start / Reset Grid</button>
-
-
-  </div>
-
-
-  <div class="screen">
-    <div class="container">
-
-
+  <div class="container">
+    <div class="title">
+      <h1>Rock, Paper, Scissors</h1>
     </div>
-    <div class="options">
-      <button id="darkMod">Black Color</button>
-      <button id="rainbowMod">Rainbow Mode 🌈</button>
-      <button id="eraser">Eraser</button>
-      <button id="deleteBorder">Toggle Box Border</button>
-      <button class="pick-button" id="pickButton">Pick Color</button>
-      <div class="color-picker">
-        <div class="color-box" id="colorBox"></div>
-        <input type="range" min="0" max="255" value="0" class="slider" id="redSlider">
-        <input type="range" min="0" max="255" value="0" class="slider" id="greenSlider">
-        <input type="range" min="0" max="255" value="0" class="slider" id="blueSlider">
-        <div id="rgbValue">RGB(0, 0, 0)</div>
+
+    <div class="rule">
+      <p class="disclaimer">The first player to reach 5 points wins the game.</p>
+    </div>
+
+    <div class="score">
+      <span class="player-score">Player Score: 0</span>
+      <span class="computer-score">Computer Score: 0</span>
+    </div>
+
+    <div class="border">
+      <div class="choices">
+        <button class="rock" id="option">ROCK</button>
+        <button class="scissors" id="option">SCISSORS</button>
+        <button class="paper" id="option">PAPER</button>
       </div>
     </div>
+
+    <div class="versus"></div>
+
+    <div class="outcome">
+      <p>You Win! Rock beats Scissors.</p>
+    </div>
   </div>
 
-  <div class="footer">
-    <p>Copyright © <a target="_blank" href="https://github.com/sarif-agent">sarif-agent</a> 2024</p>
-  </div>
-
-  <script src="./script.js">
-
-  </script>
+  <script src="./script.js"></script>
 </body>
-
-</html>
